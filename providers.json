@@ -1,0 +1,1069 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openai-272k/gpt-6.1-sol",
+  "providers": {
+    "openai-272k": {
+      "name": "OpenAI (272K)",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "baseURL": "https://newapi.server.apricityx.top:55555/v1",
+        "apiKey": "{file:./newapi.key}",
+        "setCacheKey": true,
+        "headerTimeout": false,
+        "chunkTimeout": 600000,
+        "timeout": false
+      },
+      "models": {
+        "gpt-6-astra": {
+          "modelID": "gpt-6-astra",
+          "name": "GPT-6-Astra (Response) [272K]",
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
+        },
+        "gpt-6-sol": {
+          "modelID": "gpt-6-sol",
+          "name": "GPT-6-Sol (Response) [272K]",
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "reasoningEffort": "none"
+              }
+            },
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
+        },
+        "gpt-6.1-sol": {
+          "modelID": "gpt-6.1-sol",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "name": "GPT-6.1-Sol (Response) [272K]",
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
+        },
+        "gpt-6.1-terra": {
+          "modelID": "gpt-6.1-terra",
+          "name": "GPT-6.1-Terra (Response) [272K]",
+          "releaseDate": "2026-10-26",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "toggle": true,
+              "effort": [
+                "none",
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "reasoningEffort": "none"
+              }
+            },
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          }
+        },
+        "gpt-6-luna": {
+          "modelID": "gpt-6-luna",
+          "name": "GPT-6-Luna (Response) [272K]",
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "reasoningEffort": "none"
+              }
+            },
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "openai-1m": {
+      "name": "OpenAI (1M)",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "baseURL": "https://newapi.server.apricityx.top:55555/v1",
+        "apiKey": "{file:./newapi.key}",
+        "setCacheKey": true,
+        "headerTimeout": false,
+        "chunkTimeout": 600000,
+        "timeout": false
+      },
+      "models": {
+        "gpt-6-astra": {
+          "modelID": "gpt-6-astra",
+          "name": "GPT-6-Astra (Response) [1M]",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6-sol": {
+          "modelID": "gpt-6-sol",
+          "name": "GPT-6-Sol (Response) [1M]",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "reasoningEffort": "none"
+              }
+            },
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6.1-sol": {
+          "modelID": "gpt-6.1-sol",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "name": "GPT-6.1-Sol (Response) [1M]",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6.1-terra": {
+          "modelID": "gpt-6.1-terra",
+          "name": "GPT-6.1-Terra (Response) [1M]",
+          "releaseDate": "2026-10-26",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "toggle": true,
+              "effort": [
+                "none",
+                "low",
+                "medium",
+                "high",
+                "xhigh",
+                "max"
+              ]
+            }
+          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "reasoningEffort": "none"
+              }
+            },
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6-luna": {
+          "modelID": "gpt-6-luna",
+          "name": "GPT-6-Luna (Response) [1M]",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "none",
+              "settings": {
+                "reasoningEffort": "none"
+              }
+            },
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        }
+      }
+    },
+    "guomo": {
+      "name": "国模",
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "settings": {
+        "baseURL": "https://newapi.server.apricityx.top:55555/v1",
+        "apiKey": "{file:./newapi.key}",
+        "setCacheKey": true,
+        "headerTimeout": false,
+        "chunkTimeout": 600000,
+        "timeout": false
+      },
+      "models": {
+        "deepseek-v4-flash": {
+          "modelID": "deepseek-v4-flash",
+          "name": "DeepSeek V4 Flash",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "high"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 664576,
+            "output": 384000
+          }
+        },
+        "deepseek-v4-pro": {
+          "modelID": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "high"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 664576,
+            "output": 384000
+          }
+        },
+        "deepseek-v4-flash-vision": {
+          "modelID": "deepseek-v4-flash-vision",
+          "name": "DeepSeek V4 Flash Vision",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 786432,
+            "output": 262144
+          }
+        },
+        "deepseek-v4-flash-vision-exp": {
+          "modelID": "deepseek-v4-flash-vision-exp",
+          "name": "DeepSeek V4 Flash Vision Exp",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "high"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 786432,
+            "output": 262144
+          }
+        },
+        "glm-5.3": {
+          "modelID": "glm-5.3",
+          "name": "GLM-5.3",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "max"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "max",
+              "settings": {
+                "reasoningEffort": "max"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 983040,
+            "output": 65536
+          }
+        },
+        "glm-5": {
+          "modelID": "glm-5",
+          "name": "GLM-5",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 204800,
+            "input": 76800,
+            "output": 128000
+          }
+        },
+        "glm-4.7": {
+          "modelID": "glm-4.7",
+          "name": "GLM-4.7",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 204800,
+            "input": 73728,
+            "output": 131072
+          }
+        },
+        "kimi-k2.6": {
+          "modelID": "kimi-k2.6",
+          "name": "Kimi K2.6",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "body": {
+            "max_completion_tokens": 32768,
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "thinking",
+              "body": {
+                "thinking": {
+                  "type": "enabled"
+                }
+              }
+            },
+            {
+              "id": "none",
+              "body": {
+                "thinking": {
+                  "type": "disabled"
+                }
+              }
+            }
+          ],
+          "limit": {
+            "context": 262144,
+            "input": 26215,
+            "output": 235929
+          }
+        },
+        "minimax-m3": {
+          "modelID": "minimax-m3",
+          "name": "MiniMax M3",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "body": {
+            "reasoning_split": true,
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "video"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "thinking",
+              "body": {
+                "thinking": {
+                  "type": "enabled"
+                }
+              }
+            },
+            {
+              "id": "none",
+              "body": {
+                "thinking": {
+                  "type": "disabled"
+                }
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 536576,
+            "output": 512000
+          }
+        },
+        "grok-4.7": {
+          "modelID": "grok-4.7",
+          "name": "Grok 4.7",
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "settings": {
+            "reasoningEffort": "high"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            },
+            {
+              "id": "xhigh",
+              "settings": {
+                "reasoningEffort": "xhigh"
+              }
+            }
+          ],
+          "limit": {
+            "context": 200000,
+            "input": 160000,
+            "output": 40000
+          }
+        },
+        "gemini-4-argon": {
+          "modelID": "gemini-4-argon",
+          "name": "Gemini 4 Argon",
+          "capabilities": {
+            "tools": true,
+            "input": [
+              "text",
+              "image",
+              "video",
+              "audio",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "variants": [
+            {
+              "id": "low",
+              "settings": {
+                "reasoningEffort": "low"
+              }
+            },
+            {
+              "id": "medium",
+              "settings": {
+                "reasoningEffort": "medium"
+              }
+            },
+            {
+              "id": "high",
+              "settings": {
+                "reasoningEffort": "high"
+              }
+            }
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 983040,
+            "output": 65536
+          }
+        }
+      }
+    },
+    "opencode": {}
+  },
+  "policies": [
+    {
+      "action": "provider.use",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "provider.use",
+      "resource": "openai-272k",
+      "effect": "allow"
+    },
+    {
+      "action": "provider.use",
+      "resource": "openai-1m",
+      "effect": "allow"
+    },
+    {
+      "action": "provider.use",
+      "resource": "guomo",
+      "effect": "allow"
+    },
+    {
+      "action": "provider.use",
+      "resource": "opencode",
+      "effect": "allow"
+    }
+  ]
+}
