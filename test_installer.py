@@ -1,3 +1,4 @@
+import ast
 import json
 import stat
 import tempfile
@@ -63,13 +64,38 @@ class InstallerTests(unittest.TestCase):
 
     def test_export_has_only_public_configuration(self):
         self.assertEqual(set(self.template), {'$schema', 'model', 'providers', 'policies'})
-        self.assertEqual(sum(len(v.get('models', {})) for v in self.template['providers'].values()), 21)
         text = Path('install.sh').read_text()
         self.assertNotIn('192.168.', text)
         self.assertNotIn('/home/apricityx', text)
-        for provider in self.template['providers'].values():
-            if provider.get('models'):
-                self.assertEqual(provider['settings']['baseURL'], 'https://newapi.server.apricityx.top:55555/v1')
+        for name, host in [('openai-272k', 'direct'), ('openai-1m', 'server'), ('guomo', 'server')]:
+            settings = self.template['providers'][name]['settings']
+            self.assertEqual(settings['baseURL'], f'https://newapi.{host}.apricityx.top:55555/v1')
+            self.assertEqual(settings['apiKey'], '{file:./newapi.key}')
+
+    def test_installer_embeds_current_template(self):
+        line = next(line for line in Path('install.sh').read_text().splitlines()
+                    if line.startswith('TEMPLATE = '))
+        self.assertEqual(json.loads(ast.literal_eval(line.split(' = ', 1)[1])), self.template)
+
+    def test_gpt_62_capabilities_and_route_budgets(self):
+        efforts = ['low', 'medium', 'high', 'xhigh', 'max']
+        for route, context, input_limit in [('openai-272k', 400000, 272000),
+                                            ('openai-1m', 1050000, 922000)]:
+            for model_id in ['gpt-6.2-sol', 'gpt-6.2-astra']:
+                with self.subTest(route=route, model=model_id):
+                    model = self.template['providers'][route]['models'][model_id]
+                    self.assertEqual(model['modelID'], model_id)
+                    self.assertEqual(model['limit'], {
+                        'context': context, 'input': input_limit, 'output': 128000,
+                    })
+                    self.assertEqual(model['capabilities'], {
+                        'tools': True, 'input': ['text', 'image', 'pdf'], 'output': ['text'],
+                        'temperature': False, 'reasoning': {'supported': True, 'effort': efforts},
+                    })
+                    self.assertEqual(model['settings']['reasoningEffort'], 'medium')
+                    self.assertEqual(model['variants'], [
+                        {'id': effort, 'settings': {'reasoningEffort': effort}} for effort in efforts
+                    ])
 
 
 if __name__ == '__main__':

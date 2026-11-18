@@ -10,7 +10,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Apricityx/opencode-config/ma
 ```
 
 确认安装后，**交互式输入自己的 New API API Key，输入不回显**。
-统一网关：`https://newapi.server.apricityx.top:55555/v1`。
+`openai-272k` 使用 `https://newapi.direct.apricityx.top:55555/v1`；`openai-1m` 和 `guomo` 使用 `https://newapi.server.apricityx.top:55555/v1`。
 脚本不发送或验证 Key，不进行付费测试调用。
 
 > 远程脚本会修改全局配置。建议先阅读仓库中的 `install.sh`，确认可信后再运行。
@@ -18,13 +18,13 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Apricityx/opencode-config/ma
 
 ## 包含的模型
 
-- **openai-272k**：5 个 GPT 模型，输入预算 272,000，输出预算 128,000。
-- **openai-1m**：相同 5 个 GPT 模型，输入预算 922,000，输出预算 128,000。
-- **guomo**：11 个模型，包括 DeepSeek V4、GLM、Kimi、MiniMax、Grok、Gemini。
+- **openai-272k**：7 个 GPT 模型（含 GPT-6.2 Sol 和 Astra），输入预算 272,000，输出预算 128,000。
+- **openai-1m**：相同 7 个 GPT 模型，输入预算 922,000，输出预算 128,000。
+- **guomo**：9 个模型，包括 DeepSeek V4、GLM、Kimi、MiniMax、Grok、Gemini。
 - **opencode**：保留内置服务及其动态模型目录，不修改它的 endpoint 或认证。
 
 默认：`openai-272k/gpt-6.1-sol`。完整模型、变体、兼容设置和 token 预算见 `providers.json`。
-这些参数继承自原配置，**不是对网关当前支持情况的保证**；实际可用性取决于 Key 的分组、额度和上游。
+GPT-6.2 的模型能力与原始 token 上限参考 [models.dev](https://models.dev)，272K 组保留网关的较小预算。实际可用性取决于 Key 的分组、额度和上游。
 
 ## 安装行为
 
@@ -53,7 +53,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Apricityx/opencode-config/ma
 ## 开发与验证
 
 `installer.py` 是安装逻辑，`providers.json` 是公开模板，`install.sh` 是内嵌模板的独立安装器。
-`build.py` 从维护者本机配置中选取三个 provider 的模型定义，重设公开 endpoint 和凭据引用，生成模板与脚本。
+修改 `providers.json` 后运行 `build.py`，将公开模板重新嵌入安装脚本；构建不会读取本机配置或密钥。
 
 ```bash
 python3 build.py

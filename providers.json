@@ -146,6 +146,66 @@
             }
           ]
         },
+        "gpt-6.2-sol": {
+          "modelID": "gpt-6.2-sol",
+          "name": "GPT-6.2-Sol (Response) [272K]",
+          "releaseDate": "2026-11-17",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high", "xhigh", "max"]
+            }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}},
+            {"id": "xhigh", "settings": {"reasoningEffort": "xhigh"}},
+            {"id": "max", "settings": {"reasoningEffort": "max"}}
+          ],
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          }
+        },
+        "gpt-6.2-astra": {
+          "modelID": "gpt-6.2-astra",
+          "name": "GPT-6.2-Astra (Response) [272K]",
+          "releaseDate": "2026-11-17",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high", "xhigh", "max"]
+            }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}},
+            {"id": "xhigh", "settings": {"reasoningEffort": "xhigh"}},
+            {"id": "max", "settings": {"reasoningEffort": "max"}}
+          ],
+          "limit": {
+            "context": 400000,
+            "input": 272000,
+            "output": 128000
+          }
+        },
         "gpt-6.1-terra": {
           "modelID": "gpt-6.1-terra",
           "name": "GPT-6.1-Terra (Response) [272K]",
@@ -452,6 +512,66 @@
                 "reasoningEffort": "max"
               }
             }
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6.2-sol": {
+          "modelID": "gpt-6.2-sol",
+          "name": "GPT-6.2-Sol (Response) [1M]",
+          "releaseDate": "2026-11-17",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high", "xhigh", "max"]
+            }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}},
+            {"id": "xhigh", "settings": {"reasoningEffort": "xhigh"}},
+            {"id": "max", "settings": {"reasoningEffort": "max"}}
+          ],
+          "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+          }
+        },
+        "gpt-6.2-astra": {
+          "modelID": "gpt-6.2-astra",
+          "name": "GPT-6.2-Astra (Response) [1M]",
+          "releaseDate": "2026-11-17",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high", "xhigh", "max"]
+            }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}},
+            {"id": "xhigh", "settings": {"reasoningEffort": "xhigh"}},
+            {"id": "max", "settings": {"reasoningEffort": "max"}}
           ],
           "limit": {
             "context": 1050000,
