@@ -6,7 +6,7 @@
       "name": "OpenAI (272K)",
       "package": "aisdk:@ai-sdk/openai-compatible",
       "settings": {
-        "baseURL": "https://newapi.server.apricityx.top:55555/v1",
+        "baseURL": "https://newapi.direct.apricityx.top:55555/v1",
         "apiKey": "{file:./newapi.key}",
         "setCacheKey": true,
         "headerTimeout": false,
@@ -805,48 +805,6 @@
             "context": 1048576,
             "input": 983040,
             "output": 65536
-          }
-        },
-        "glm-5": {
-          "modelID": "glm-5",
-          "name": "GLM-5",
-          "compatibility": {
-            "reasoningField": "reasoning_content"
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "limit": {
-            "context": 204800,
-            "input": 76800,
-            "output": 128000
-          }
-        },
-        "glm-4.7": {
-          "modelID": "glm-4.7",
-          "name": "GLM-4.7",
-          "compatibility": {
-            "reasoningField": "reasoning_content"
-          },
-          "capabilities": {
-            "tools": true,
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "limit": {
-            "context": 204800,
-            "input": 73728,
-            "output": 131072
           }
         },
         "kimi-k2.6": {
