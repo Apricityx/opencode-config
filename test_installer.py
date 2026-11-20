@@ -97,6 +97,30 @@ class InstallerTests(unittest.TestCase):
                         {'id': effort, 'settings': {'reasoningEffort': effort}} for effort in efforts
                     ])
 
+    def test_gemini_4_capabilities_and_streaming_budget(self):
+        models = self.template['providers']['guomo']['models']
+        for name, default, extra_high in [('argon', 'medium', False),
+                                          ('hydrogen', 'high', True),
+                                          ('neon', 'high', True),
+                                          ('carbon', 'medium', False)]:
+            model_id = f'gemini-4-{name}'
+            with self.subTest(model=model_id):
+                model = models[model_id]
+                efforts = ['low', 'medium', 'high'] + (['xhigh'] if extra_high else [])
+                self.assertEqual(model['modelID'], model_id)
+                self.assertEqual(model['limit'], {
+                    'context': 1048576, 'input': 983040, 'output': 65536,
+                })
+                self.assertEqual(model['capabilities'], {
+                    'tools': True, 'input': ['text', 'image', 'video', 'audio', 'pdf'],
+                    'output': ['text'], 'temperature': False,
+                    'reasoning': {'supported': True, 'effort': efforts},
+                })
+                self.assertEqual(model['settings']['reasoningEffort'], default)
+                self.assertEqual(model['variants'], [
+                    {'id': effort, 'settings': {'reasoningEffort': effort}} for effort in efforts
+                ])
+
 
 if __name__ == '__main__':
     unittest.main()

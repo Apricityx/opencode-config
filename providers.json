@@ -1074,38 +1074,106 @@
         "gemini-4-argon": {
           "modelID": "gemini-4-argon",
           "name": "Gemini 4 Argon",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
           "capabilities": {
             "tools": true,
-            "input": [
-              "text",
-              "image",
-              "video",
-              "audio",
-              "pdf"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text", "image", "video", "audio", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high"]
+            }
           },
           "variants": [
-            {
-              "id": "low",
-              "settings": {
-                "reasoningEffort": "low"
-              }
-            },
-            {
-              "id": "medium",
-              "settings": {
-                "reasoningEffort": "medium"
-              }
-            },
-            {
-              "id": "high",
-              "settings": {
-                "reasoningEffort": "high"
-              }
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}}
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 983040,
+            "output": 65536
+          }
+        },
+        "gemini-4-hydrogen": {
+          "modelID": "gemini-4-hydrogen",
+          "name": "Gemini 4 Hydrogen",
+          "settings": {
+            "reasoningEffort": "high"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "video", "audio", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high", "xhigh"]
             }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}},
+            {"id": "xhigh", "settings": {"reasoningEffort": "xhigh"}}
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 983040,
+            "output": 65536
+          }
+        },
+        "gemini-4-neon": {
+          "modelID": "gemini-4-neon",
+          "name": "Gemini 4 Neon",
+          "settings": {
+            "reasoningEffort": "high"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "video", "audio", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high", "xhigh"]
+            }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}},
+            {"id": "xhigh", "settings": {"reasoningEffort": "xhigh"}}
+          ],
+          "limit": {
+            "context": 1048576,
+            "input": 983040,
+            "output": 65536
+          }
+        },
+        "gemini-4-carbon": {
+          "modelID": "gemini-4-carbon",
+          "name": "Gemini 4 Carbon",
+          "settings": {
+            "reasoningEffort": "medium"
+          },
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image", "video", "audio", "pdf"],
+            "output": ["text"],
+            "temperature": false,
+            "reasoning": {
+              "supported": true,
+              "effort": ["low", "medium", "high"]
+            }
+          },
+          "variants": [
+            {"id": "low", "settings": {"reasoningEffort": "low"}},
+            {"id": "medium", "settings": {"reasoningEffort": "medium"}},
+            {"id": "high", "settings": {"reasoningEffort": "high"}}
           ],
           "limit": {
             "context": 1048576,

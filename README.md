@@ -20,11 +20,12 @@ bash <(curl -fsSL https://raw.githubusercontent.com/Apricityx/opencode-config/ma
 
 - **openai-272k**：7 个 GPT 模型（含 GPT-6.2 Sol 和 Astra），输入预算 272,000，输出预算 128,000。
 - **openai-1m**：相同 7 个 GPT 模型，输入预算 922,000，输出预算 128,000。
-- **guomo**：9 个模型，包括 DeepSeek V4、GLM、Kimi、MiniMax、Grok、Gemini。
+- **guomo**：12 个模型，包括 DeepSeek V4、GLM、Kimi、MiniMax、Grok，以及 Gemini 4 Argon、Hydrogen、Neon、Carbon。
 - **opencode**：保留内置服务及其动态模型目录，不修改它的 endpoint 或认证。
 
 默认：`openai-272k/gpt-6.1-sol`。完整模型、变体、兼容设置和 token 预算见 `providers.json`。
 GPT-6.2 的模型能力与原始 token 上限参考 [models.dev](https://models.dev)，272K 组保留网关的较小预算。实际可用性取决于 Key 的分组、额度和上游。
+Gemini 4 按 [Google 官方规格](https://ai.google.dev/gemini-api/docs/thinking) 配置流式预算：1,048,576 共享上下文，预留 65,536 给推理和输出，输入预算为 983,040。不配置需要后台模式或续接的长输出。
 
 ## 安装行为
 
